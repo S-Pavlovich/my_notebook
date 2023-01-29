@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    My Entries
+{% endblock title %}
+
+
+{% block content %}
+<ul>
+    {% for entry in entries %}
+      <li> <a href="{{ entry.get_url }}"> {{ entry|capfirst }} </a> </li>
+    {% empty %}
+      <li>No topics have been added yet.</li>
+      {% endfor %}
+</ul>
+{% endblock content %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %} {% endblock title %}</title>
+
+</head>
+<body>
+<p>
+    <a href="{% url
+      'my_notebooks:index' %}">My Notebook</a> -
+    <a href="{% url
+      'my_notebooks:topics' %}">Topics</a> -
+    <a href="{% url
+      'my_notebooks:language' %}">Languages</a> -
+    <a href="{% url
+      'my_notebooks:entries' %}">Entries</a> -
+    <a href="{% url
+      'orm_app:movies' %}">Movies</a>
+</p>
+  {% block content %} {% endblock content %}
+
+{% include 'includes/navbar.html' %}
+</body>
+</html>
+
+

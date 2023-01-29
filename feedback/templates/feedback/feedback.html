@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    My feedback
+{% endblock title %}
+
+
+{% block content %}
+    <h2>Leave a review:</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.name.label_tag }}
+            {{ form.name.errors }}
+            {{ form.name }}
+        </div>
+
+        <br>
+
+        <div>
+            {{ form.surname.label_tag }}
+            {{ form.surname.errors }}
+            {{ form.surname }}
+        </div>
+
+        <div>
+            {{ form.feedback.label_tag }}
+            {{ form.feedback.errors }}
+            {{ form.feedback }}
+        </div>
+        <button> Send </button>
+    </form>
+    <br>
+    <br>
+{% endblock content %}

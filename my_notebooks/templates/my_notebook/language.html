@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    My languages
+{% endblock title %}
+
+
+{% block content %}
+    <ul>
+            {% for language_render in language_render %}
+                {% if forloop.first %}
+                    <li> <b> <a href="{% url 'language' language=language_render %}"> {{ language_render|title }} </a> </b> </li>
+                {% elif forloop.last %}
+                    <li> <b> <a href="{% url 'language' language=language_render%}"> {{ language_render|title }} </a> </b> </li>
+                {% else %}
+                    <li> <a href="{% url 'language' language=language_render %}"> {{ language_render|title }} </a> </li>
+                {% endif %}
+            {% endfor %}
+    </ul>
+{% endblock content %}

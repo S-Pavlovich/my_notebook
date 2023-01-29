@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    My topics
+{% endblock title %}
+
+
+{% block content %}
+<ul>
+    {% for topic in topics %}
+      <li> {{ topic }} </li>
+    {% empty %}
+      <li>No topics have been added yet.</li>
+      {% endfor %}
+</ul>
+{% endblock content %}
